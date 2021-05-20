@@ -14,6 +14,7 @@ public class ArrayReplace implements Replacement {
         }
 
         return array;
+
     }
 
 }

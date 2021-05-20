@@ -38,7 +38,7 @@ public class ArrayCalculation implements Calculation {
         int amountNegativeElements = 0;
 
         for (int element : array) {
-            if (element > 0) {
+            if (element < 0) {
                 amountNegativeElements++;
             }
         }
