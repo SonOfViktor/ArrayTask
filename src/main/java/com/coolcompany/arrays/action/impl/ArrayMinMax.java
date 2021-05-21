@@ -1,6 +1,6 @@
-package com.coolcompany.arrays.action.impl;
+package main.java.com.coolcompany.arrays.action.impl;
 
-import com.coolcompany.arrays.action.Search;
+import main.java.com.coolcompany.arrays.action.Search;
 
 public class ArrayMinMax implements Search {
 

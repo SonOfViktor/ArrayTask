@@ -1,6 +1,6 @@
-package com.coolcompany.arrays.action.impl;
+package main.java.com.coolcompany.arrays.action.impl;
 
-import com.coolcompany.arrays.action.Calculation;
+import main.java.com.coolcompany.arrays.action.Calculation;
 
 public class ArrayCalculation implements Calculation {
 

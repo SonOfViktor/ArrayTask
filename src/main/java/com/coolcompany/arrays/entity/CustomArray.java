@@ -1,4 +1,4 @@
-package com.coolcompany.arrays.entity;
+package main.java.com.coolcompany.arrays.entity;
 
 import java.util.Arrays;
 

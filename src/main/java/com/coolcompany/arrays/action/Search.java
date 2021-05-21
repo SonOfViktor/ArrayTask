@@ -1,4 +1,4 @@
-package com.coolcompany.arrays.action;
+package main.java.com.coolcompany.arrays.action;
 
 public interface Search {
 

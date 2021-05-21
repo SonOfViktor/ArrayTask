@@ -1,6 +1,6 @@
-package com.coolcompany.arrays.action.impl;
+package main.java.com.coolcompany.arrays.action.impl;
 
-import com.coolcompany.arrays.action.Replacement;
+import main.java.com.coolcompany.arrays.action.Replacement;
 
 public class ArrayReplace implements Replacement {
 
