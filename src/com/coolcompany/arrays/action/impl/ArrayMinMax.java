@@ -1,8 +1,11 @@
-package main.java.com.coolcompany.arrays.action.impl;
+package com.coolcompany.arrays.action.impl;
 
-import main.java.com.coolcompany.arrays.action.Search;
+import com.coolcompany.arrays.action.Search;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ArrayMinMax implements Search {
+    static Logger logger = LogManager.getLogger();
 
     @Override
     public int searchMinElement(int[] array) {
@@ -11,6 +14,8 @@ public class ArrayMinMax implements Search {
         for (int element : array) {
             minElement = (minElement < element) ? minElement : element;
         }
+
+        logger.info("Min element = " + minElement);
 
         return minElement;
     }
@@ -22,6 +27,8 @@ public class ArrayMinMax implements Search {
         for (int element : array) {
             maxElement = Math.max(maxElement, element);
         }
+
+        logger.info("Max element = " + maxElement);
 
         return maxElement;
     }

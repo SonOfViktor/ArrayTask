@@ -1,8 +1,8 @@
-package main.java.com.coolcompany.arrays.action;
+package com.coolcompany.arrays.action;
 
 public interface Calculation {
 
-    double calculateAverageElement (int[] array);
+    double calculateAverageValue (int[] array);
 
     int calculateSumOfElement (int[] array);
 

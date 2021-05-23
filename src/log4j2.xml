@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status = "info">
+    <Properties>
+        <property name="LOG_DIR">logs</property>
+        <property name ="pattern_console">
+            %d{HH:mm:ss.SSS} %-5level %logger{5} - %msg%n</property>
+        <property name="pattern_file">%d{yy-MM-dd HH:mm.SSS} [%t] %-5level %logger{5} - %msg%n</property>
+    </Properties>
+
+    <Appenders>
+        <Console name = "Console" target = "SYSTEM_OUT">
+                <PatternLayout pattern = "${pattern_console}"/>
+        </Console>
+        <RollingFile name="FileRolling" fileName="logs/log_roll.txt"
+                     filePattern = "logs/${date:yyyy-MM-dd}/log_roll_%i.txt">
+            <PatternLayout pattern ="${pattern_file}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="50 KB"/>
+            </Policies>
+            <DefaultRolloverStrategy max = "10"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level = "debug">
+            <AppenderRef ref="FileRolling"/>
+            <AppenderRef ref="Console" level = "trace"/>
+        </Root>
+    </Loggers>
+</Configuration>

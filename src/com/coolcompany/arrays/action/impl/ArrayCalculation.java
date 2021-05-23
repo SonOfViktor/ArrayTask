@@ -1,12 +1,19 @@
-package main.java.com.coolcompany.arrays.action.impl;
+package com.coolcompany.arrays.action.impl;
 
-import main.java.com.coolcompany.arrays.action.Calculation;
+import com.coolcompany.arrays.action.Calculation;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ArrayCalculation implements Calculation {
+    static Logger logger = LogManager.getLogger();
 
     @Override
-    public double calculateAverageElement(int[] array) {
-        return (double) calculateSumOfElement(array) / array.length;
+    public double calculateAverageValue(int[] array) {
+        double average = (double) calculateSumOfElement(array) / array.length;
+
+        logger.info("Average value = " + average);
+
+        return average;
     }
 
     @Override
@@ -16,6 +23,8 @@ public class ArrayCalculation implements Calculation {
         for (int element : array) {
             sum += element;
         }
+
+        logger.info("Sum = " + sum);
 
         return sum;
     }
@@ -30,6 +39,8 @@ public class ArrayCalculation implements Calculation {
             }
         }
 
+        logger.info("Amount positive elements = " + amountPositiveElements);
+
         return amountPositiveElements;
     }
 
@@ -42,6 +53,8 @@ public class ArrayCalculation implements Calculation {
                 amountNegativeElements++;
             }
         }
+
+        logger.info("Amount negative elements = " + amountNegativeElements);
 
         return amountNegativeElements;
     }
