@@ -1,6 +1,7 @@
-package com.coolcompany.arrays.action.impl;
+package com.fairycompany.arrays.action.impl;
 
-import com.coolcompany.arrays.action.Calculation;
+import com.fairycompany.arrays.action.Calculation;
+import com.fairycompany.arrays.entity.CustomArray;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -8,8 +9,8 @@ public class ArrayCalculation implements Calculation {
     static Logger logger = LogManager.getLogger();
 
     @Override
-    public double calculateAverageValue(int[] array) {
-        double average = (double) calculateSumOfElement(array) / array.length;
+    public double calculateAverageValue(CustomArray customArray) {
+        double average = (double) calculateSumOfElement(customArray) / customArray.getArray().length;
 
         logger.info("Average value = " + average);
 
@@ -17,10 +18,10 @@ public class ArrayCalculation implements Calculation {
     }
 
     @Override
-    public int calculateSumOfElement(int[] array) {
+    public int calculateSumOfElement(CustomArray customArray) {
         int sum = 0;
 
-        for (int element : array) {
+        for (int element : customArray.getArray()) {
             sum += element;
         }
 
@@ -30,10 +31,10 @@ public class ArrayCalculation implements Calculation {
     }
 
     @Override
-    public int calculatePositiveElements(int[] array) {
+    public int calculatePositiveElements(CustomArray customArray) {
         int amountPositiveElements = 0;
 
-        for (int element : array) {
+        for (int element : customArray.getArray()) {
             if (element > 0) {
                 amountPositiveElements++;
             }
@@ -45,10 +46,10 @@ public class ArrayCalculation implements Calculation {
     }
 
     @Override
-    public int calculateNegativeElements(int[] array) {
+    public int calculateNegativeElements(CustomArray customArray) {
         int amountNegativeElements = 0;
 
-        for (int element : array) {
+        for (int element : customArray.getArray()) {
             if (element < 0) {
                 amountNegativeElements++;
             }
