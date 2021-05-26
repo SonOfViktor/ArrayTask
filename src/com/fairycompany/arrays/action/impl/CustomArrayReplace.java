@@ -10,11 +10,11 @@ public class CustomArrayReplace implements NumberArrayReplacement {
     private static Logger logger = LogManager.getLogger();
 
     @Override
-    public void replaceOddElementsWithN(CustomArray customArray, int n) throws CustomArrayException {
+    public void replaceOddElementsWithNumber(CustomArray customArray, int number) throws CustomArrayException {
 
         for (int i = 0; i < customArray.getLength(); i++) {
             if (i % 2 > 0) {
-                customArray.setElement(i, n);
+                customArray.setElement(i, number);
             }
         }
 

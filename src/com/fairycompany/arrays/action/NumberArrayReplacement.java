@@ -5,6 +5,6 @@ import com.fairycompany.arrays.exception.CustomArrayException;
 
 public interface NumberArrayReplacement {
 
-    void replaceOddElementsWithN(CustomArray customArray, int n) throws CustomArrayException;
+    void replaceOddElementsWithNumber(CustomArray customArray, int number) throws CustomArrayException;
 
 }
