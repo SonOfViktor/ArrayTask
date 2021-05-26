@@ -1,11 +1,11 @@
 package com.fairycompany.arrays.action.impl;
 
-import com.fairycompany.arrays.action.Calculation;
+import com.fairycompany.arrays.action.NumberArrayCalculation;
 import com.fairycompany.arrays.entity.CustomArray;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ArrayCalculation implements Calculation {
+public class CustomArrayCalculation implements NumberArrayCalculation {
     private static Logger logger = LogManager.getLogger();
 
     @Override

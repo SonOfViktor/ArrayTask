@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class ArrayTaskParser {
     private static Logger logger = LogManager.getLogger();
 
-    public ArrayList<int[]> parseStringListIntoArray (ArrayList<String> stringList) throws CustomArrayException {
+    public ArrayList<int[]> parseStringListIntoArray(ArrayList<String> stringList) throws CustomArrayException {
 
         if (ArrayTaskValidator.isListNullOrEmpty(stringList)) {
             throw new CustomArrayException("List is null or hasn't any strings");

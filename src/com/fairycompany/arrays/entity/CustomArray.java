@@ -29,15 +29,20 @@ public class CustomArray {
         this.array = array;
     }
 
-    public int getArrayElement(int index) {
+    public int getElement(int index) {
         return array[index];
     }
 
-    public void setArrayElement(int index, int value) throws CustomArrayException{
+    public void setElement(int index, int value) throws CustomArrayException {
         if (ArrayTaskValidator.isIndexArrayOutOfBound(this.array, index)) {
             throw new CustomArrayException("Given index is out of bound");
         }
+
         array[index] = value;
+    }
+
+    public int getLength() {
+        return array.length;
     }
 
     @Override
@@ -56,8 +61,6 @@ public class CustomArray {
 
     @Override
     public String toString() {
-        return "CustomArray{" +
-                "array=" + Arrays.toString(array) +
-                '}';
+        return Arrays.toString(array);
     }
 }
