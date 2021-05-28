@@ -1,9 +1,9 @@
 package com.fairycompany.arrays.action;
 
 import com.fairycompany.arrays.entity.CustomArray;
-import com.fairycompany.arrays.exception.CustomArrayException;
+import com.fairycompany.arrays.exception.ArrayTaskException;
 
 public interface NumberArraySort {
 
-    void selectionSort(CustomArray customArray) throws CustomArrayException;
+    void selectionSort(CustomArray customArray) throws ArrayTaskException;
 }

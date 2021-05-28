@@ -22,7 +22,7 @@ public class ArrayTaskReader {
             logger.info("Read file is successful");
 
         } catch (FileNotFoundException e) {
-            logger.error("File is not found");
+            logger.fatal("File is not found");
             e.printStackTrace();
         } catch (IOException e) {
             logger.error("Input error");

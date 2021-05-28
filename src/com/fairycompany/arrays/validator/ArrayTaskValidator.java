@@ -6,6 +6,9 @@ import java.util.ArrayList;
 
 public class ArrayTaskValidator {
 
+    private ArrayTaskValidator() {
+    }
+
     public static boolean isArrayNullOrEmpty(int[] array) {
         return (array == null || array.length <= 0);
     }
@@ -15,8 +18,8 @@ public class ArrayTaskValidator {
     }
 
     public static boolean isStringIntArray(String string) {
-        String regex = "^-?\\d+(\\s+-?\\d+)+$";
-        return (string.matches(regex));
+        String intNumberArrayRegex = "^-?\\d+(\\s+-?\\d+)+$";
+        return (string.matches(intNumberArrayRegex));
     }
 
     public static boolean isListNullOrEmpty(ArrayList<?> list) {

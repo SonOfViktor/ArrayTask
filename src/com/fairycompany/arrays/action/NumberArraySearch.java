@@ -1,11 +1,12 @@
 package com.fairycompany.arrays.action;
 
 import com.fairycompany.arrays.entity.CustomArray;
+import com.fairycompany.arrays.exception.ArrayTaskException;
 
 public interface NumberArraySearch {
 
-    int searchMinElement(CustomArray customArray);
+    int searchMinElement(CustomArray customArray) throws ArrayTaskException;
 
-    int searchMaxElement(CustomArray customArray);
+    int searchMaxElement(CustomArray customArray) throws ArrayTaskException;
 
 }

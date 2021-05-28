@@ -1,6 +1,6 @@
 package com.fairycompany.arrays.parser;
 
-import com.fairycompany.arrays.exception.CustomArrayException;
+import com.fairycompany.arrays.exception.ArrayTaskException;
 import com.fairycompany.arrays.validator.ArrayTaskValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,10 +10,10 @@ import java.util.ArrayList;
 public class ArrayTaskParser {
     private static Logger logger = LogManager.getLogger();
 
-    public ArrayList<int[]> parseStringListIntoArray(ArrayList<String> stringList) throws CustomArrayException {
+    public ArrayList<int[]> parseStringListToArray(ArrayList<String> stringList) throws ArrayTaskException {
 
         if (ArrayTaskValidator.isListNullOrEmpty(stringList)) {
-            throw new CustomArrayException("List is null or hasn't any strings");
+            throw new ArrayTaskException("List is null or hasn't any strings");
         }
 
         ArrayList<int[]> arrayList = new ArrayList<>();

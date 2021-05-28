@@ -1,6 +1,6 @@
 package com.fairycompany.arrays.entity;
 
-import com.fairycompany.arrays.exception.CustomArrayException;
+import com.fairycompany.arrays.exception.ArrayTaskException;
 import com.fairycompany.arrays.validator.ArrayTaskValidator;
 
 import java.util.Arrays;
@@ -9,9 +9,9 @@ public class CustomArray {
 
     private int[] array;
 
-    public CustomArray(int... array) throws CustomArrayException {
+    public CustomArray(int... array) throws ArrayTaskException {
         if (ArrayTaskValidator.isArrayNullOrEmpty(array)) {
-            throw new CustomArrayException("Given array is null or empty");
+            throw new ArrayTaskException("Given array is null or empty");
         }
 
         this.array = array;
@@ -21,9 +21,9 @@ public class CustomArray {
         return Arrays.copyOf(array, array.length);
     }
 
-    public void setArray(int... array) throws CustomArrayException {
+    public void setArray(int... array) throws ArrayTaskException {
         if (ArrayTaskValidator.isArrayNullOrEmpty(array)) {
-            throw new CustomArrayException("Given array is null or empty");
+            throw new ArrayTaskException("Given array is null or empty");
         }
 
         this.array = array;
@@ -33,9 +33,9 @@ public class CustomArray {
         return array[index];
     }
 
-    public void setElement(int index, int value) throws CustomArrayException {
+    public void setElement(int index, int value) throws ArrayTaskException {
         if (ArrayTaskValidator.isIndexArrayOutOfBound(this.array, index)) {
-            throw new CustomArrayException("Given index is out of bound");
+            throw new ArrayTaskException("Given index is out of bound");
         }
 
         array[index] = value;

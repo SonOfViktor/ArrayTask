@@ -2,7 +2,7 @@ package com.fairycompany.arrays.action.impl;
 
 import com.fairycompany.arrays.action.NumberArraySort;
 import com.fairycompany.arrays.entity.CustomArray;
-import com.fairycompany.arrays.exception.CustomArrayException;
+import com.fairycompany.arrays.exception.ArrayTaskException;
 import com.fairycompany.arrays.validator.ArrayTaskValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,9 +10,9 @@ import org.apache.logging.log4j.Logger;
 public class CustomArraySort implements NumberArraySort {
     static Logger logger = LogManager.getLogger();
 
-    public void selectionSort(CustomArray customArray) throws CustomArrayException {
+    public void selectionSort(CustomArray customArray) throws ArrayTaskException {
         if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
-            throw new CustomArrayException("Given customArray is null");
+            throw new ArrayTaskException("Given customArray is null");
         }
 
         if (customArray.getLength() != 1) {
@@ -31,7 +31,7 @@ public class CustomArraySort implements NumberArraySort {
     }
 
     private void swapElement(CustomArray customArray, int firstElement, int secondElement)
-            throws CustomArrayException {
+            throws ArrayTaskException {
         int temp = customArray.getElement(firstElement);
         customArray.setElement(firstElement, customArray.getElement(secondElement));
         customArray.setElement(secondElement, temp);
