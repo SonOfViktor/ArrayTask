@@ -30,6 +30,48 @@ public class CustomArraySort implements NumberArraySort {
         logger.info(customArray.toString());
     }
 
+    public void bubbleSort(CustomArray customArray) throws ArrayTaskException {
+        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+            throw new ArrayTaskException("Given customArray is null");
+        }
+
+        if (customArray.getLength() != 1) {
+            for (int i = customArray.getLength() - 1; i >= 1; i--) {
+                for (int j = 0; j < i; j++) {
+                    if (customArray.getElement(j) > customArray.getElement(j + 1))
+                        swapElement(customArray, j, j + 1);
+                }
+            }
+        }
+
+        logger.info(customArray.toString());
+    }
+
+    public void shuttleSort(CustomArray customArray) throws ArrayTaskException {
+        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+            throw new ArrayTaskException("Given customArray is null");
+        }
+
+        for (int i = 1; i < customArray.getLength(); i++) {
+            if (customArray.getElement(i) < customArray.getElement(i - 1)) {
+                swapElement(customArray, i, i - 1);
+
+                int j = i - 1;
+
+                while (j - 1 >= 0) {
+                    if (customArray.getElement(j) < customArray.getElement(j - 1)) {
+                        swapElement(customArray, j, j - 1);
+                        j--;
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
+
+        logger.info(customArray.toString());
+    }
+
     private void swapElement(CustomArray customArray, int firstElement, int secondElement)
             throws ArrayTaskException {
         int temp = customArray.getElement(firstElement);

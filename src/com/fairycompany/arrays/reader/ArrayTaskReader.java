@@ -1,32 +1,35 @@
 package com.fairycompany.arrays.reader;
 
+import com.fairycompany.arrays.validator.ArrayTaskValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.io.*;
-import java.util.ArrayList;
+import java.nio.file.Files;
+import java.util.List;
 
 public class ArrayTaskReader {
 
     private static Logger logger = LogManager.getLogger();
 
-    public ArrayList<String> readFile(String path) {
-        ArrayList<String> stringList = new ArrayList<>();
-        String fileLine;
+    public List<String> readFile(String path) {
+        List<String> stringList;
 
-        try (BufferedReader reader = new BufferedReader (new FileReader(path))) {
+        try {
+            File file = new File(path);
 
-            while ((fileLine = reader.readLine()) != null) {
-                    stringList.add(fileLine);
+            if (ArrayTaskValidator.isFileEmpty(path)) {
+                logger.fatal("File does not exist or is empty");
+                throw new RuntimeException();
             }
+
+            stringList = Files.readAllLines(file.toPath());
 
             logger.info("Read file is successful");
 
-        } catch (FileNotFoundException e) {
-            logger.fatal("File is not found");
-            e.printStackTrace();
         } catch (IOException e) {
-            logger.error("Input error");
-            e.printStackTrace();
+            logger.fatal("Input error during reading file");
+            throw new RuntimeException();
         }
 
         return stringList;

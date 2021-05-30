@@ -6,21 +6,23 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ArrayTaskParser {
     private static Logger logger = LogManager.getLogger();
 
-    public ArrayList<int[]> parseStringListToArray(ArrayList<String> stringList) throws ArrayTaskException {
+    public ArrayList<int[]> parseStringListToArray(List<String> stringList) throws ArrayTaskException {
 
         if (ArrayTaskValidator.isListNullOrEmpty(stringList)) {
             throw new ArrayTaskException("List is null or hasn't any strings");
         }
 
+        String spaceRegex = "\\s+";
         ArrayList<int[]> arrayList = new ArrayList<>();
 
         for (String string : stringList) {
             if (ArrayTaskValidator.isStringIntArray(string)) {
-                String[] numbers = string.split(" +");
+                String[] numbers = string.split(spaceRegex);
                 int[] array = new int[numbers.length];
 
                 for (int i = 0; i < numbers.length; i++) {

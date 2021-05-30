@@ -2,7 +2,8 @@ package com.fairycompany.arrays.validator;
 
 import com.fairycompany.arrays.entity.CustomArray;
 
-import java.util.ArrayList;
+import java.io.File;
+import java.util.List;
 
 public class ArrayTaskValidator {
 
@@ -18,16 +19,21 @@ public class ArrayTaskValidator {
     }
 
     public static boolean isStringIntArray(String string) {
-        String intNumberArrayRegex = "^-?\\d+(\\s+-?\\d+)+$";
+        String intNumberArrayRegex = "-?\\d+((\\s+-?\\d+)?)+$";
         return (string.matches(intNumberArrayRegex));
     }
 
-    public static boolean isListNullOrEmpty(ArrayList<?> list) {
+    public static boolean isListNullOrEmpty(List<?> list) {
         return ((list == null) || list.isEmpty());
     }
 
     public static boolean isCustomArrayNull(CustomArray customArray) {
         return customArray == null;
+    }
+
+    public static boolean isFileEmpty(String path) {
+        long size = new File(path).length();
+        return size == 0;
     }
 
 }
