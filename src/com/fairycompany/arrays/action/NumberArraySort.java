@@ -10,4 +10,7 @@ public interface NumberArraySort {
     void bubbleSort(CustomArray customArray) throws ArrayTaskException;
 
     void shuttleSort(CustomArray customArray) throws ArrayTaskException;
+
+    void streamSort(CustomArray customArray) throws ArrayTaskException;
+
 }

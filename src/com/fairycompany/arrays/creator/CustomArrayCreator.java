@@ -23,7 +23,7 @@ public class CustomArrayCreator {
             customArrayList.add(new CustomArray(array));
         }
 
-        logger.info("Create list of CustomArrays is successful");
+        logger.info("Creating CustomArray list is successful");
 
         return customArrayList;
     }

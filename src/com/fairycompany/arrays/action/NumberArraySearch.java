@@ -9,4 +9,8 @@ public interface NumberArraySearch {
 
     int searchMaxElement(CustomArray customArray) throws ArrayTaskException;
 
+    int searchMinElementStream(CustomArray customArray) throws ArrayTaskException;
+
+    int searchMaxElementStream(CustomArray customArray) throws ArrayTaskException;
+
 }

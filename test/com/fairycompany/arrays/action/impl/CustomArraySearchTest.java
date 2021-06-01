@@ -19,29 +19,55 @@ public class CustomArraySearchTest {
 
     }
 
-    @Test (description = "Check min element of CustomArray")
+    @Test(description = "Check min element of CustomArray")
     public void testSearchMinElement() throws ArrayTaskException {
         int actual = customArraySearch.searchMinElement(customArray);
         int expected = -453;
         assertEquals(actual, expected);
     }
 
-    @Test (description = "ArrayTaskException is called if CustomArray null",
-            expectedExceptions = ArrayTaskException.class)
-    public void testSearchMinElementException() throws ArrayTaskException {
-        customArraySearch.searchMinElement(null);
-    }
-
-    @Test (description = "Check max element of CustomArray")
+    @Test(description = "Check max element of CustomArray")
     public void testSearchMaxElement() throws ArrayTaskException {
         int actual = customArraySearch.searchMaxElement(customArray);
         int expected = 800;
         assertEquals(actual, expected);
     }
 
-    @Test (description = "ArrayTaskException is called if CustomArray null",
+    @Test(description = "Check min element of CustomArray with stream")
+    public void testSearchMinElementStream() throws ArrayTaskException {
+        int actual = customArraySearch.searchMinElementStream(customArray);
+        int expected = -453;
+        assertEquals(actual, expected);
+    }
+
+    @Test(description = "Check max element of CustomArray with stream")
+    public void testSearchMaxElementStream() throws ArrayTaskException {
+        int actual = customArraySearch.searchMaxElementStream(customArray);
+        int expected = 800;
+        assertEquals(actual, expected);
+    }
+
+    @Test(description = "ArrayTaskException is called if CustomArray null",
+            expectedExceptions = ArrayTaskException.class)
+    public void testSearchMinElementException() throws ArrayTaskException {
+        customArraySearch.searchMinElement(null);
+    }
+
+    @Test(description = "ArrayTaskException is called if CustomArray null",
             expectedExceptions = ArrayTaskException.class)
     public void testSearchMaxElementException() throws ArrayTaskException {
         customArraySearch.searchMaxElement(null);
+    }
+
+    @Test(description = "ArrayTaskException is called if CustomArray null",
+            expectedExceptions = ArrayTaskException.class)
+    public void testSearchMinElementStreamException() throws ArrayTaskException {
+        customArraySearch.searchMinElementStream(null);
+    }
+
+    @Test(description = "ArrayTaskException is called if CustomArray null",
+            expectedExceptions = ArrayTaskException.class)
+    public void testSearchMaxElementStreamException() throws ArrayTaskException {
+        customArraySearch.searchMaxElementStream(null);
     }
 }

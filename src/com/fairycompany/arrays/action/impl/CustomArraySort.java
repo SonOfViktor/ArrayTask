@@ -7,6 +7,8 @@ import com.fairycompany.arrays.validator.ArrayTaskValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Arrays;
+
 public class CustomArraySort implements NumberArraySort {
     static Logger logger = LogManager.getLogger();
 
@@ -68,6 +70,16 @@ public class CustomArraySort implements NumberArraySort {
                 }
             }
         }
+
+        logger.info(customArray.toString());
+    }
+
+    public void streamSort(CustomArray customArray) throws ArrayTaskException {
+        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+            throw new ArrayTaskException("Given customArray is null");
+        }
+
+        customArray.setArray(Arrays.stream(customArray.getArray()).sorted().toArray());
 
         logger.info(customArray.toString());
     }

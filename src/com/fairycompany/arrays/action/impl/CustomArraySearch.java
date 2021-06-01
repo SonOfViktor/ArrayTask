@@ -7,6 +7,8 @@ import com.fairycompany.arrays.validator.ArrayTaskValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Arrays;
+
 public class CustomArraySearch implements NumberArraySearch {
     private static Logger logger = LogManager.getLogger();
 
@@ -44,4 +46,29 @@ public class CustomArraySearch implements NumberArraySearch {
         return maxElement;
     }
 
+    @Override
+    public int searchMinElementStream(CustomArray customArray) throws ArrayTaskException {
+        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+            throw new ArrayTaskException("Given CustomArray is null");
+        }
+
+        int minElement = Arrays.stream(customArray.getArray()).min().getAsInt();
+
+        logger.info("Min element = " + minElement);
+
+        return minElement;
+    }
+
+    @Override
+    public int searchMaxElementStream(CustomArray customArray) throws ArrayTaskException {
+        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+            throw new ArrayTaskException("Given CustomArray is null");
+        }
+
+        int maxElement = Arrays.stream(customArray.getArray()).max().getAsInt();
+
+        logger.info("Max element = " + maxElement);
+
+        return maxElement;
+    }
 }

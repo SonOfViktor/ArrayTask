@@ -36,6 +36,8 @@ public class ArrayTaskParser {
             }
         }
 
+        logger.info("Parsing is successful");
+
         return arrayList;
     }
 }

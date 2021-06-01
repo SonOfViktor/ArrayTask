@@ -5,6 +5,8 @@ import com.fairycompany.arrays.exception.ArrayTaskException;
 
 public interface NumberArrayReplacement {
 
-    void replaceOddElementsWithNumber(CustomArray customArray, int number) throws ArrayTaskException;
+    void replaceOddIndexWithNumber(CustomArray customArray, int number) throws ArrayTaskException;
+
+    void replaceEvenIndexWithNumberStream(CustomArray customArray, int number) throws ArrayTaskException;
 
 }
