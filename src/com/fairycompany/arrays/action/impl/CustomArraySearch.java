@@ -3,7 +3,6 @@ package com.fairycompany.arrays.action.impl;
 import com.fairycompany.arrays.action.NumberArraySearch;
 import com.fairycompany.arrays.entity.CustomArray;
 import com.fairycompany.arrays.exception.ArrayTaskException;
-import com.fairycompany.arrays.validator.ArrayTaskValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,7 +13,7 @@ public class CustomArraySearch implements NumberArraySearch {
 
     @Override
     public int searchMinElement(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 
@@ -31,7 +30,7 @@ public class CustomArraySearch implements NumberArraySearch {
 
     @Override
     public int searchMaxElement(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 
@@ -48,7 +47,7 @@ public class CustomArraySearch implements NumberArraySearch {
 
     @Override
     public int searchMinElementStream(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 
@@ -61,7 +60,7 @@ public class CustomArraySearch implements NumberArraySearch {
 
     @Override
     public int searchMaxElementStream(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 

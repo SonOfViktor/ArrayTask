@@ -10,7 +10,7 @@ public class CustomArray {
     private int[] array;
 
     public CustomArray(int... array) throws ArrayTaskException {
-        if (ArrayTaskValidator.isArrayNullOrEmpty(array)) {
+        if (array == null || array.length == 0) {
             throw new ArrayTaskException("Given array is null or empty");
         }
 
@@ -22,20 +22,24 @@ public class CustomArray {
     }
 
     public void setArray(int... array) throws ArrayTaskException {
-        if (ArrayTaskValidator.isArrayNullOrEmpty(array)) {
+        if (array == null || array.length == 0) {
             throw new ArrayTaskException("Given array is null or empty");
         }
 
         this.array = array;
     }
 
-    public int getElement(int index) {
+    public int getElement(int index) throws ArrayTaskException {
+        if (ArrayTaskValidator.isIndexArrayOutOfBound(this.array, index)) {
+            throw new ArrayTaskException("Given index " + index + " is out of bound");
+        }
+
         return array[index];
     }
 
     public void setElement(int index, int value) throws ArrayTaskException {
         if (ArrayTaskValidator.isIndexArrayOutOfBound(this.array, index)) {
-            throw new ArrayTaskException("Given index is out of bound");
+            throw new ArrayTaskException("Given index " + index + " is out of bound");
         }
 
         array[index] = value;

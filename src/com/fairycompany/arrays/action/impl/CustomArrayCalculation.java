@@ -3,7 +3,6 @@ package com.fairycompany.arrays.action.impl;
 import com.fairycompany.arrays.action.NumberArrayCalculation;
 import com.fairycompany.arrays.entity.CustomArray;
 import com.fairycompany.arrays.exception.ArrayTaskException;
-import com.fairycompany.arrays.validator.ArrayTaskValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,7 +13,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
 
     @Override
     public int calculateSumOfElement(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 
@@ -31,7 +30,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
 
     @Override
     public double calculateAverageValue(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 
@@ -44,7 +43,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
 
     @Override
     public int calculatePositiveElements(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 
@@ -63,7 +62,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
 
     @Override
     public int calculateNegativeElements(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 
@@ -82,7 +81,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
 
     @Override
     public int calculateSumOfElementStream(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 
@@ -95,7 +94,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
 
     @Override
     public double calculateAverageValueStream(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 
@@ -108,7 +107,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
 
     @Override
     public long calculatePositiveElementsStream(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 
@@ -121,7 +120,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
 
     @Override
     public long calculateNegativeElementsStream(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given CustomArray is null");
         }
 

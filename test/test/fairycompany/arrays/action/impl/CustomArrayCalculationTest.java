@@ -1,5 +1,6 @@
-package com.fairycompany.arrays.action.impl;
+package test.fairycompany.arrays.action.impl;
 
+import com.fairycompany.arrays.action.impl.CustomArrayCalculation;
 import com.fairycompany.arrays.entity.CustomArray;
 import com.fairycompany.arrays.exception.ArrayTaskException;
 import org.testng.annotations.BeforeClass;

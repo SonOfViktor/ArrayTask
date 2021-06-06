@@ -1,19 +1,21 @@
-package com.fairycompany.arrays.creator;
+package test.fairycompany.arrays.creator;
 
+import com.fairycompany.arrays.creator.CustomArrayCreator;
 import com.fairycompany.arrays.entity.CustomArray;
 import com.fairycompany.arrays.exception.ArrayTaskException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.testng.Assert.*;
 
 public class CustomArrayCreatorTest {
 
     CustomArrayCreator customArrayCreator;
-    ArrayList<int[]> arrayList;
-    ArrayList<CustomArray> customArrayList;
+    List<int[]> arrayList;
+    List<CustomArray> customArrayList;
 
 
     @BeforeClass

@@ -3,7 +3,6 @@ package com.fairycompany.arrays.action.impl;
 import com.fairycompany.arrays.action.NumberArraySort;
 import com.fairycompany.arrays.entity.CustomArray;
 import com.fairycompany.arrays.exception.ArrayTaskException;
-import com.fairycompany.arrays.validator.ArrayTaskValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,7 +12,7 @@ public class CustomArraySort implements NumberArraySort {
     static Logger logger = LogManager.getLogger();
 
     public void selectionSort(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given customArray is null");
         }
 
@@ -33,7 +32,7 @@ public class CustomArraySort implements NumberArraySort {
     }
 
     public void bubbleSort(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given customArray is null");
         }
 
@@ -50,22 +49,24 @@ public class CustomArraySort implements NumberArraySort {
     }
 
     public void shuttleSort(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given customArray is null");
         }
 
-        for (int i = 1; i < customArray.getLength(); i++) {
-            if (customArray.getElement(i) < customArray.getElement(i - 1)) {
-                swapElement(customArray, i, i - 1);
+        if (customArray.getLength() != 1) {
+            for (int i = 1; i < customArray.getLength(); i++) {
+                if (customArray.getElement(i) < customArray.getElement(i - 1)) {
+                    swapElement(customArray, i, i - 1);
 
-                int j = i - 1;
+                    int j = i - 1;
 
-                while (j - 1 >= 0) {
-                    if (customArray.getElement(j) < customArray.getElement(j - 1)) {
-                        swapElement(customArray, j, j - 1);
-                        j--;
-                    } else {
-                        break;
+                    while (j - 1 >= 0) {
+                        if (customArray.getElement(j) < customArray.getElement(j - 1)) {
+                            swapElement(customArray, j, j - 1);
+                            j--;
+                        } else {
+                            break;
+                        }
                     }
                 }
             }
@@ -75,11 +76,13 @@ public class CustomArraySort implements NumberArraySort {
     }
 
     public void streamSort(CustomArray customArray) throws ArrayTaskException {
-        if (ArrayTaskValidator.isCustomArrayNull(customArray)) {
+        if (customArray == null) {
             throw new ArrayTaskException("Given customArray is null");
         }
 
-        customArray.setArray(Arrays.stream(customArray.getArray()).sorted().toArray());
+        if (customArray.getLength() != 1) {
+            customArray.setArray(Arrays.stream(customArray.getArray()).sorted().toArray());
+        }
 
         logger.info(customArray.toString());
     }

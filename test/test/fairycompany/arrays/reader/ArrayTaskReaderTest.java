@@ -1,5 +1,6 @@
-package com.fairycompany.arrays.reader;
+package test.fairycompany.arrays.reader;
 
+import com.fairycompany.arrays.reader.ArrayTaskReader;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -31,6 +32,7 @@ public class ArrayTaskReaderTest {
         expected = new ArrayList<>();
         expected.add("2 -70 51 -85 90 -72 18 71 2 0");
         expected.add("-3 d8 22 11");
+        expected.add("");
         expected.add("8 10 - 3 15");
         expected.add("1 -2 3 10 -4");
         assertEquals(actual, expected);

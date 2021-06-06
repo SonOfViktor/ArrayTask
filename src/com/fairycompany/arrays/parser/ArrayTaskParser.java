@@ -10,34 +10,37 @@ import java.util.List;
 
 public class ArrayTaskParser {
     private static Logger logger = LogManager.getLogger();
+    private static final String SPACE_DELIMITER_REGEX = "\\s+";
 
-    public ArrayList<int[]> parseStringListToArray(List<String> stringList) throws ArrayTaskException {
+    public List<int[]> parseStringListToArray(List<String> stringList) throws ArrayTaskException {
 
-        if (ArrayTaskValidator.isListNullOrEmpty(stringList)) {
+
+        if (stringList == null || stringList.isEmpty()) {
             throw new ArrayTaskException("List is null or hasn't any strings");
         }
 
-        String spaceRegex = "\\s+";
-        ArrayList<int[]> arrayList = new ArrayList<>();
 
-        for (String string : stringList) {
-            if (ArrayTaskValidator.isStringIntArray(string)) {
-                String[] numbers = string.split(spaceRegex);
+        ArrayList<int[]> intArraysList = new ArrayList<>();
+
+        for (String arrayString : stringList) {
+            if (ArrayTaskValidator.isStringIntArray(arrayString)) {
+                String[] numbers = arrayString.split(SPACE_DELIMITER_REGEX);
                 int[] array = new int[numbers.length];
 
                 for (int i = 0; i < numbers.length; i++) {
                     array[i] = Integer.parseInt(numbers[i]);
                 }
 
-                arrayList.add(array);
-                logger.debug(string + " has been added");
+                intArraysList.add(array);
+
+                logger.debug(arrayString + " has been added");
             } else {
-                logger.info(string + " can't be array");
+                logger.info(arrayString + " can't be array");
             }
         }
 
         logger.info("Parsing is successful");
 
-        return arrayList;
+        return intArraysList;
     }
 }

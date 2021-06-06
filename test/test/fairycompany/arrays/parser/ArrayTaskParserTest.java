@@ -1,6 +1,7 @@
-package com.fairycompany.arrays.parser;
+package test.fairycompany.arrays.parser;
 
 import com.fairycompany.arrays.exception.ArrayTaskException;
+import com.fairycompany.arrays.parser.ArrayTaskParser;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

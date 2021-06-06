@@ -7,33 +7,18 @@ import java.util.List;
 
 public class ArrayTaskValidator {
 
+    private static final String INT_ARRAY_CHECKER_REGEX = "-?\\d+((\\s+-?\\d+)?)+$";
+
     private ArrayTaskValidator() {
     }
 
-    public static boolean isArrayNullOrEmpty(int[] array) {
-        return (array == null || array.length <= 0);
+    public static boolean isIndexArrayOutOfBound(int[] array, int index) {
+        return index < 0 || index >= array.length;
     }
 
-    public static boolean isIndexArrayOutOfBound(int[] array, int i) {
-        return (i < 0) || (i >= array.length);
-    }
-
-    public static boolean isStringIntArray(String string) {
-        String intNumberArrayRegex = "-?\\d+((\\s+-?\\d+)?)+$";
-        return (string.matches(intNumberArrayRegex));
-    }
-
-    public static boolean isListNullOrEmpty(List<?> list) {
-        return ((list == null) || list.isEmpty());
-    }
-
-    public static boolean isCustomArrayNull(CustomArray customArray) {
-        return customArray == null;
-    }
-
-    public static boolean isFileEmpty(String path) {
-        long size = new File(path).length();
-        return size == 0;
+    public static boolean isStringIntArray(String stringData) {
+        return stringData.matches(INT_ARRAY_CHECKER_REGEX);
     }
 
 }
+
