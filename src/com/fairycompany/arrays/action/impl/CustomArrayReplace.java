@@ -28,8 +28,8 @@ public class CustomArrayReplace implements NumberArrayReplacement {
             }
         }
 
-        logger.debug("Replaced array is " + customArray);
-        logger.info("Amount of replacements in the array is " + replaceAmount);
+        logger.debug("Replaced array is {}", customArray);
+        logger.info("Amount of replacements in the array is {}", replaceAmount);
 
         return replaceAmount;
     }
@@ -57,8 +57,8 @@ public class CustomArrayReplace implements NumberArrayReplacement {
 
         int replaceAmount = atomicReplaceAmount.intValue();
 
-        logger.debug("Replaced array is " + customArray);
-        logger.info("Amount of replacements in the array is " + replaceAmount);
+        logger.debug("Replaced array is {}", customArray);
+        logger.info("Amount of replacements in the array is {}", replaceAmount);
 
         return replaceAmount;
     }

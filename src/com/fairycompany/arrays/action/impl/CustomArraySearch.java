@@ -10,11 +10,12 @@ import java.util.Arrays;
 
 public class CustomArraySearch implements NumberArraySearch {
     private static Logger logger = LogManager.getLogger();
+    private static final String NULL_MESSAGE = "Given CustomArray is null";
 
     @Override
     public int searchMinElement(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         int minElement = customArray.getElement(0);
@@ -23,7 +24,7 @@ public class CustomArraySearch implements NumberArraySearch {
             minElement = Math.min(minElement, element);
         }
 
-        logger.info("Min element = " + minElement);
+        logger.info("Min element = {}", minElement);
 
         return minElement;
     }
@@ -31,7 +32,7 @@ public class CustomArraySearch implements NumberArraySearch {
     @Override
     public int searchMaxElement(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         int maxElement = customArray.getElement(0);
@@ -40,7 +41,7 @@ public class CustomArraySearch implements NumberArraySearch {
             maxElement = Math.max(maxElement, element);
         }
 
-        logger.info("Max element = " + maxElement);
+        logger.info("Max element = {}", maxElement);
 
         return maxElement;
     }
@@ -48,12 +49,12 @@ public class CustomArraySearch implements NumberArraySearch {
     @Override
     public int searchMinElementStream(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         int minElement = Arrays.stream(customArray.getArray()).min().getAsInt();
 
-        logger.info("Min element = " + minElement);
+        logger.info("Min element = {}", minElement);
 
         return minElement;
     }
@@ -61,12 +62,12 @@ public class CustomArraySearch implements NumberArraySearch {
     @Override
     public int searchMaxElementStream(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         int maxElement = Arrays.stream(customArray.getArray()).max().getAsInt();
 
-        logger.info("Max element = " + maxElement);
+        logger.info("Max element = {}", maxElement);
 
         return maxElement;
     }

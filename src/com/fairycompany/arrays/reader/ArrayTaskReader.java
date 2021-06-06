@@ -20,16 +20,16 @@ public class ArrayTaskReader {
             File dataFile = new File(path);
 
             if (dataFile.length() == 0) {
-                logger.fatal("File " + dataFile.getName() + " does not exist or is empty");
+                logger.fatal("File {} does not exist or is empty", dataFile.getName());
                 throw new RuntimeException();
             }
 
             stringList = Files.readAllLines(dataFile.toPath());
 
-            logger.info("Read file is successful");
+            logger.info("Read file {} is successful", dataFile.getName());
 
         } catch (IOException e) {
-            logger.error("Input error during reading file " + path);
+            logger.error("Input error during reading file {}", path);
         }
 
         return stringList;

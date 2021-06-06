@@ -33,9 +33,9 @@ public class ArrayTaskParser {
 
                 intArraysList.add(array);
 
-                logger.debug(arrayString + " has been added");
+                logger.debug("{} has been added", arrayString);
             } else {
-                logger.info(arrayString + " can't be array");
+                logger.info("{} can't be array", arrayString);
             }
         }
 

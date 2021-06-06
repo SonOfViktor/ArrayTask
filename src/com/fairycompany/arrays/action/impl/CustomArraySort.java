@@ -10,10 +10,11 @@ import java.util.Arrays;
 
 public class CustomArraySort implements NumberArraySort {
     static Logger logger = LogManager.getLogger();
+    private static final String NULL_MESSAGE = "Given CustomArray is null";
 
     public void selectionSort(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given customArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         if (customArray.getLength() != 1) {
@@ -33,7 +34,7 @@ public class CustomArraySort implements NumberArraySort {
 
     public void bubbleSort(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given customArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         if (customArray.getLength() != 1) {
@@ -50,7 +51,7 @@ public class CustomArraySort implements NumberArraySort {
 
     public void shuttleSort(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given customArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         if (customArray.getLength() != 1) {
@@ -77,7 +78,7 @@ public class CustomArraySort implements NumberArraySort {
 
     public void streamSort(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given customArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         if (customArray.getLength() != 1) {

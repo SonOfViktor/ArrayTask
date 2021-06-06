@@ -10,11 +10,12 @@ import java.util.Arrays;
 
 public class CustomArrayCalculation implements NumberArrayCalculation {
     private static Logger logger = LogManager.getLogger();
+    private static final String NULL_MESSAGE = "Given CustomArray is null";
 
     @Override
     public int calculateSumOfElement(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         int sum = 0;
@@ -23,7 +24,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
             sum += element;
         }
 
-        logger.info("Sum = " + sum);
+        logger.info("Sum = {}", sum);
 
         return sum;
     }
@@ -31,12 +32,12 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
     @Override
     public double calculateAverageValue(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         double average = (double) calculateSumOfElement(customArray) / customArray.getArray().length;
 
-        logger.info("Average value = " + average);
+        logger.info("Average value = {}", average);
 
         return average;
     }
@@ -44,7 +45,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
     @Override
     public int calculatePositiveElements(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException("nullMessage");
         }
 
         int amountPositiveElements = 0;
@@ -55,7 +56,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
             }
         }
 
-        logger.info("Amount positive elements = " + amountPositiveElements);
+        logger.info("Amount positive elements = {}", amountPositiveElements);
 
         return amountPositiveElements;
     }
@@ -63,7 +64,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
     @Override
     public int calculateNegativeElements(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         int amountNegativeElements = 0;
@@ -74,7 +75,7 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
             }
         }
 
-        logger.info("Amount negative elements = " + amountNegativeElements);
+        logger.info("Amount negative elements = {}", amountNegativeElements);
 
         return amountNegativeElements;
     }
@@ -82,12 +83,12 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
     @Override
     public int calculateSumOfElementStream(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         int sum = Arrays.stream(customArray.getArray()).sum();
 
-        logger.info("Sum = " + sum);
+        logger.info("Sum = {}", sum);
 
         return sum;
     }
@@ -95,12 +96,12 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
     @Override
     public double calculateAverageValueStream(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         double average = Arrays.stream(customArray.getArray()).average().orElse(0);
 
-        logger.info("Average value = " + average);
+        logger.info("Average value = {}", average);
 
         return average;
     }
@@ -108,12 +109,12 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
     @Override
     public long calculatePositiveElementsStream(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         long amountPositiveElements = Arrays.stream(customArray.getArray()).filter(x -> (x > 0)).count();
 
-        logger.info("Amount positive elements = " + amountPositiveElements);
+        logger.info("Amount positive elements = {}", amountPositiveElements);
 
         return amountPositiveElements;
     }
@@ -121,12 +122,12 @@ public class CustomArrayCalculation implements NumberArrayCalculation {
     @Override
     public long calculateNegativeElementsStream(CustomArray customArray) throws ArrayTaskException {
         if (customArray == null) {
-            throw new ArrayTaskException("Given CustomArray is null");
+            throw new ArrayTaskException(NULL_MESSAGE);
         }
 
         long amountNegativeElements = Arrays.stream(customArray.getArray()).filter(x -> (x < 0)).count();
 
-        logger.info("Amount negative elements = " + amountNegativeElements);
+        logger.info("Amount negative elements = {}", amountNegativeElements);
 
         return amountNegativeElements;
     }
